@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { connectToDB } from "@/lib/mongo";
 import Product from "@/models/product";
 
-// GET one product
+
 export async function GET(_: Request, { params }: { params: { id: string } }) {
   try {
     await connectToDB();
@@ -15,7 +15,7 @@ export async function GET(_: Request, { params }: { params: { id: string } }) {
   }
 }
 
-// UPDATE a product
+
 export async function PUT(req: Request, { params }: { params: { id: string } }) {
   try {
     await connectToDB();
@@ -35,7 +35,7 @@ export async function PUT(req: Request, { params }: { params: { id: string } }) 
   }
 }
 
-// DELETE a product
+
 export async function DELETE(_: Request, { params }: { params: { id: string } }) {
   try {
     await connectToDB();

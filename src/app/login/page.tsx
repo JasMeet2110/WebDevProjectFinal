@@ -12,7 +12,7 @@ export default function LoginPage() {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // NextAuth signIn
+    
     const res = await signIn("credentials", {
       redirect: false,
       email,
@@ -22,7 +22,7 @@ export default function LoginPage() {
     if (res?.error) {
       setError("Invalid email or password");
     } else {
-      // Role check happens via session (not localStorage anymore)
+      
       router.push("/");
     }
   };

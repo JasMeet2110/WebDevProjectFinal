@@ -38,7 +38,7 @@ export default function ShopPage() {
 
   const checkout = () => {
     alert("Checkout successful ✅");
-    setCart([]); // clear cart
+    setCart([]); 
     setIsCartOpen(false);
   };
 

@@ -7,7 +7,7 @@ export async function POST(req: Request) {
   try {
     const { email, password } = await req.json();
 
-    // 1. Hardcoded ADMIN
+    
     if (
       email === process.env.ADMIN_EMAIL &&
       password === process.env.ADMIN_PASS
@@ -18,7 +18,7 @@ export async function POST(req: Request) {
       });
     }
 
-    // 2. Regular users in DB
+    
     await connectToDB();
     const user = await User.findOne({ email });
     if (!user) {

@@ -23,7 +23,7 @@ export async function POST(req: Request) {
     const newUser = new User({
       email,
       password: hashedPassword,
-      role: "user", // default role
+      role: "user", 
     });
 
     await newUser.save();

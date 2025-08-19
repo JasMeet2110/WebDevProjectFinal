@@ -17,7 +17,7 @@ const handler = NextAuth({
           throw new Error("Missing credentials");
         }
 
-        // ✅ Admin login check first
+        
         if (
           credentials.email === process.env.ADMIN_EMAIL &&
           credentials.password === process.env.ADMIN_PASS
@@ -30,7 +30,7 @@ const handler = NextAuth({
           };
         }
 
-        // ✅ Otherwise check database user
+        
         await connectToDB();
         const user = await User.findOne({ email: credentials.email });
         if (!user) throw new Error("No user found");
